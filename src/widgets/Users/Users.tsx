@@ -1,10 +1,11 @@
 import { useState, type FC, type ReactElement } from 'react';
 
 import { useGetUsersQuery } from '@/shared/store/api/usersApi';
+import { LazyLoad } from '@/shared/UI/LazyLoad';
 
-import { UserDetails } from './UserDetails';
+import { User } from './UI/User';
+import { UserDetails } from './UI/UserDetails';
 
-import profileIcon from './assets/profile.svg';
 import cl from './Users.module.scss';
 
 interface UsersProps {}
@@ -27,12 +28,9 @@ export const Users: FC<UsersProps> = (): ReactElement => {
 
           <ul className={cl.users__list}>
             {data.map((user) => (
-              <li key={user.id} className={cl.user} onClick={() => onUserClick(user.id)}>
-                <div className={cl.user__icon}>
-                  <img alt="profile-icon" src={profileIcon} />
-                </div>
-                <div className={cl.user__name}>{user.name}</div>
-              </li>
+              <LazyLoad key={user.id} once height="40px">
+                <User user={user} onUserClick={onUserClick} />
+              </LazyLoad>
             ))}
           </ul>
 

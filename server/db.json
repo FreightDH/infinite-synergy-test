@@ -17,7 +17,7 @@
     {
       "id": "2",
       "name": "Пользователь 2",
-      "jobTitle": "",
+      "jobTitle": "Разработчик",
       "company": "",
       "department": ""
     },
@@ -159,7 +159,7 @@
       "name": "Пользователь 22",
       "jobTitle": "Разработчик",
       "company": "",
-      "department": ""
+      "department": "Какой-то отдел"
     },
     {
       "id": "23",
