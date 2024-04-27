@@ -4,7 +4,7 @@ declare module '*.module.scss' {
 }
 
 type User = {
-  id: number;
+  id: string;
   name: string;
   department: string;
   company: string;
