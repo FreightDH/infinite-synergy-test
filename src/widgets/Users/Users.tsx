@@ -11,7 +11,7 @@ import cl from './Users.module.scss';
 interface UsersProps {}
 
 export const Users: FC<UsersProps> = (): ReactElement => {
-  const { data = [], isLoading } = useGetUsersQuery();
+  const { data = [], isLoading, isError } = useGetUsersQuery();
   const [editUserId, setEditUserId] = useState('0');
   const [isEditVisible, setEditVisible] = useState(false);
 
@@ -25,6 +25,7 @@ export const Users: FC<UsersProps> = (): ReactElement => {
       <div className="users__container">
         <div className={cl.users__body}>
           {isLoading && <h1>Loading...</h1>}
+          {isError && <h1>Something wen't wrong. Please, try again later.</h1>}
 
           <ul className={cl.users__list}>
             {data.map((user) => (
