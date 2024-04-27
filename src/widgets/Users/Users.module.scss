@@ -1,0 +1,17 @@
+.users {
+  &__body {
+    display: flex;
+  }
+
+  &__list {
+    max-height: 60vh;
+
+    flex: 1 1 auto;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+
+    border: 1px solid #000;
+    overflow-y: scroll;
+  }
+}
